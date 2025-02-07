@@ -10,6 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import create_engine, Column, Integer, String, Float
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
+import pymysql
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 from starlette.middleware.gzip import GZipMiddleware
 from slowapi import Limiter
@@ -19,7 +20,7 @@ from slowapi.util import get_remote_address
 model = YOLO("yolov8n.pt")  # تأكد من أن لديك هذا الموديل
 
 # ✅ إعداد اتصال MySQL
-DATABASE_URL = "mysql+pymysql://anfal:yourpassword@localhost/drone_api"
+DATABASE_URL = "mysql+pymysql://u562164736_eco_anfal:M>49tgxZHn@127.0.0.1:3306/u562164736_eco_track_db"
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
