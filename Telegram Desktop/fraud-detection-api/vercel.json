@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "scripts/vercel_handler.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "scripts/vercel_handler.py"
+    }
+  ],
+  "env": {
+    "PYTHONPATH": "scripts"
+  },
+  "functions": {
+    "scripts/vercel_handler.py": {
+      "maxDuration": 30
+    }
+  }
+}
